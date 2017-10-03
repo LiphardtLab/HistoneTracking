@@ -18,13 +18,12 @@ Binary files are needed for the computer to be able to keep up with the data str
 The binary file can be read in hundreds of different ways, depending on your needs. 
 
 5.1. ‘Quick and dirty’ look at a .dat file. The easiest thing to do is to use ImageJ (or Fiji), which can read raw binary files via File > Import > Raw...
-Then select the .dat file, and then enter the information: Unsigned 16 bit integer, Little-endian byte order, and the Height and Width information, which depends on how you set your camera. A typical value will be 512 x 512, or, as in the case above (Figure 1), 209 x 229. Note that essentially all programs disagree about what is meant by the height and width of an image, so you may need to flip the values (giving 229 x 209) if your images look funny. This is true for all programs (Fiji, Matlab, Mathematica, ...). You will also need to set the number of images to whatever value you set in Octopus, which defaults to storing 100 images per file, but this value is completely adjustable and up to you. At this point you will have the full dataset, as an image stack, in ImageJ (or Fiji). Note that the image may be completely white or black, depending on your experiment and how you set the gain etc. Then, go to
-Select Image > Adjust > Brightness/Contrast... to see where the data are in your experiment. Note that you cannot permanently apply any Brightness/Contrast values to the image stack, since it is in 16 bit format, and ImageJ/Fiji only allows you to do that with 8 bit images.
+Then select the .dat file, and then enter the information: Unsigned 16 bit integer, Little-endian byte order, and the Height and Width information, which depends on how you set your camera. A typical value will be 512 x 512. Note that essentially all programs disagree about what is meant by the height and width of an image, so you may need to flip the values if your images look funny. This is true for all programs (Fiji, Matlab, Mathematica, ...). You will also need to set the number of images to whatever value is stated the corresponding metadata (.dth) file, which defaults to storing 100 images per file, but this value is completely adjustable and up to you. At this point you will have the full dataset, as an image stack, in ImageJ (or Fiji). Note that the image may be completely white or black, depending on your experiment and how you set the gain etc. Then, go to Select Image > Adjust > Brightness/Contrast... to see where the data are in your experiment. Note that you cannot permanently apply any Brightness/Contrast values to the image stack, since it is in 16 bit format, and ImageJ/Fiji only allows you to do that with 8 bit images.
 
 #6. Custom exposure metadata. 
 
 Note that all experiments done in our lab automatically generate a special metadata file which allows us to track every single image that was collected. 
-These are the asci .dth files. The internal format of the .dth files should be self-explanatory. 
+These are the ascii .dth files. The internal format of the .dth files should be self-explanatory. 
 This text file can be opened with a word processor, BBEdit, Matlab, Mathematica, etc.
 
 #7. ToDo
