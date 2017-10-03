@@ -1,0 +1,62 @@
+#Imaging Metadata
+
+Category	Metadata key	Description	Tier	Comments
+Image	pixel size	the dimensions of pixels in the image	D1	
+Image	z-sampling	Distance between optical planes	D1	
+Image	time step	the time step between images / volumes in a series	D1	
+Image	time stamp	The time at which the image was taken	D1	
+Image	unique ID	A unique ID which identifies this image, even if file names change	D1	
+Image	imager	The person who acquired the image	D1	
+Image	Channel encoding	Order in file, e.g. t,z,ch1-n	D1	
+				
+Instrument	Brand	Manufacturer, development	D1	
+Instrument	Objective	Brand	D1	
+	Objective	N.A.	D1	
+	Objective	Magnification	D1	
+	Objective	Immersion Medium	D2	
+	Objective	Refractive Index (measured)	A2	
+	Objective	working distance	A1	
+	Objective	Field Number	A1	
+	Objective	special designation (e.g. TIRF, …)	D1	
+Instrument	Fluorescence light source(s)	Manufacturer	D1	
+	Fluorescence light source(s)	Type	D1	
+	Fluorescence light source(s)	Power output nominal	A1	
+	Fluorescence light source(s)	center wavelength	D1	
+	Fluorescence light source(s)	Lasers/diodes per channel	A1	
+	Fluorescence light source(s)	Coupling (e.g. fiber, light guide, direct)	A2	
+Instrument	Filter Sets	Manufacturer(s)	A1	
+	Filter Sets	Ch 1:	D2	
+	Filter Sets	Ch 2:	D2	
+	Filter Sets	Ch n:	D2	
+Instrument	Detector(s)	Manufacturer	D2	
+	Detector(s)	Camera/Confocal/etc..	D1	
+Instrument	Modality	WF, confocal, TIRF etc…	D1	
+Instrument	integration time	the length of time the image is exposed to light for a single frame	D2	
+Instrument	camera model	Specific model, chip, etc.	A1	camera based
+Instrument	camera serial #	Camera serial number	A1	camera based
+Instrument	flatfield map	an image describing field dependent differences in response	A1	
+				
+Calibration	dark value	the value reported for no incoming light	A1	With Test Tube, other A2/Dev
+Calibration	photometric conversion	conversion factor to convert incoming counts to photons	A1	With Test Tube, other A2/Dev
+Calibration	read noise	the amplitude of read noise	A1	With Test Tube, other A2/Dev
+Calibration	illumination intensity	Light intensity/power at the sample	A1	With Test Tube, other A2/Dev
+Calibration	camera dark map	an image describing the pixel by pixel variations in dark level	A1	With Test Tube, other A2/Dev
+Calibration	camera read map	an image describing the pixel by pixel variations in read noise	A1	With Test Tube, other A2/Dev
+Calibration	3D multi-color bead stack		A1	D2 strongly recommended
+Calibration	PSFJ report		A1	D2 strongly recommended
+Calibration	Test Tube	Other Test Tube parameters	A1	
+Calibration	Imaging standard	e.g. Argolight, Geller MRS4, DNA origami	Dev	
+				
+Sample	preparer	The person who prepared the sample	D1	
+Sample	preparation date		D1	
+Sample	cell line / tissue type		D1	
+Sample	labelling	What is labelled in each color channel	D1	
+Sample	protocol	a link to the protocol used for sample preparation	D1	
+Sample	fixation	the fixation method used	D1	
+Sample	embedding	The embedding medium 	D1	
+Sample	embedding	Refractive index of embedding medium (nominal)	D2	
+Sample	embedding	Refractive index of embedding medium (measured)	A2	
+				
+Processing	source image	ideally the unique ID of the source image, optionally a URL		
+Processing	protocol	what was done		
+				
