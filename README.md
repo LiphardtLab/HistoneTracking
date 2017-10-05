@@ -73,10 +73,10 @@ scope_bflamp: 0.0
 # Quantitative analysis of the raw image data in Matlab. 
 
 Right out the box, Matlab can read all .dat files directly. 
-
+```
 fileID = fopen('a1.dat');
 myImageArray = fread(fileID,'uint16');
-
+```
 At this point you have an array with all the data, and you can manipulate this in any way you want. 
 Most people use ‘reshape’ to turn this into a simpler 3D array, e.g. [X Y T]. 
 You can use ‘imshow’ on this array (or slices thereof) directly, to see/scale/process the images.
@@ -84,10 +84,10 @@ You can use ‘imshow’ on this array (or slices thereof) directly, to see/scal
 # Quantitative analysis of the raw image data in Mathematica. 
 
 Right out the box, Mathematica can read all .dat files directly. 
-
+```
 file = "/Users/janliphardt/Desktop/a_1.dat";
 bc = Import[file,”UnsignedInteger16”];
-
+```
 At this point you have all the data, and you can manipulate the data in any way you want. 
 Most people use ‘ArrayReshape[]’ to turn everything into a simple 3D array, e.g. [X Y T] 
 or whatever order they like most. You can manipulate the data as data, or you can can explicitly 
@@ -135,7 +135,10 @@ and noise was defined as the standard deviation of a 5x5 pixel window centered a
 fitted Gaussian.
 
 *Fractional Brownian Motion*. The raw XY,T data were directly fit to a three parameter fBM model 
-(Mathematica version 11.1.1.0, FractionalBrownianMotionProcess[μ, σ, h], ProcessEstimator -> "MaximumLikelihood"]). 
+```
+Mathematica version 11.1.1.0, 
+FractionalBrownianMotionProcess[μ, σ, h], ProcessEstimator -> "MaximumLikelihood"]
+``` 
 The first term μ captures constant ‘drift’, σ captures the covariance (= σ2 (s2h+t2h-Abs[t-s]2h)/2), and h is the Hurst parameter. 
 Note that h is simply 1/2 of α, the slope of LogLog transformed MSD.
 
