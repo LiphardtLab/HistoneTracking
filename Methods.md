@@ -1,0 +1,90 @@
+#Imaging Metadata
+
+#1. Microscope
+
+This is home-built single molecule TIRF microscope with an Andor EMCCD camera 
+and a commercial 4 color laser combiner unit (an Olympus CellTIRF).
+
+#2. Objectives
+
+#3. Laser Power and TIRF HILO settings
+
+#4. Camera exposure parameters
+
+#5. Custom file format for the raw data ('.dat' files). 
+
+All intensity/pixel information is stored in a binary format ending in the extension ‘.dat’. 
+Binary files are needed for the computer to be able to keep up with the data streaming from the camera. 
+The binary file can be read in hundreds of different ways, depending on your needs. 
+
+5.1. ‘Quick and dirty’ look at a .dat file. The easiest thing to do is to use ImageJ (or Fiji), which can read raw binary files via File > Import > Raw...
+Then select the .dat file, and then enter the information: Unsigned 16 bit integer, Little-endian byte order, and the Height and Width information, which depends on how you set your camera. A typical value will be 512 x 512. Note that essentially all programs disagree about what is meant by the height and width of an image, so you may need to flip the values if your images look funny. This is true for all programs (Fiji, Matlab, Mathematica, ...). You will also need to set the number of images to whatever value is stated the corresponding metadata (.dth) file, which defaults to storing 100 images per file, but this value is completely adjustable and up to you. At this point you will have the full dataset, as an image stack, in ImageJ (or Fiji). Note that the image may be completely white or black, depending on your experiment and how you set the gain etc. Then, go to Select Image > Adjust > Brightness/Contrast... to see where the data are in your experiment. Note that you cannot permanently apply any Brightness/Contrast values to the image stack, since it is in 16 bit format, and ImageJ/Fiji only allows you to do that with 8 bit images.
+
+#6. Custom exposure metadata. 
+
+Note that all experiments done in our lab automatically generate a special metadata file which allows us to track every single image that was collected. 
+These are the ascii .dth files. The internal format of the .dth files should be self-explanatory. 
+This text file can be opened with a word processor, BBEdit, Matlab, Mathematica, etc.
+
+#7. ToDo
+
+Category	Metadata key	Description	Tier	Comments
+Image	pixel size	the dimensions of pixels in the image	D1	
+Image	z-sampling	Distance between optical planes	D1	
+Image	time step	the time step between images / volumes in a series	D1	
+Image	time stamp	The time at which the image was taken	D1	
+Image	unique ID	A unique ID which identifies this image, even if file names change	D1	
+Image	imager	The person who acquired the image	D1	
+Image	Channel encoding	Order in file, e.g. t,z,ch1-n	D1	
+				
+Instrument	Brand	Manufacturer, development	D1	
+Instrument	Objective	Brand	D1	
+	Objective	N.A.	D1	
+	Objective	Magnification	D1	
+	Objective	Immersion Medium	D2	
+	Objective	Refractive Index (measured)	A2	
+	Objective	working distance	A1	
+	Objective	Field Number	A1	
+	Objective	special designation (e.g. TIRF, …)	D1	
+Instrument	Fluorescence light source(s)	Manufacturer	D1	
+	Fluorescence light source(s)	Type	D1	
+	Fluorescence light source(s)	Power output nominal	A1	
+	Fluorescence light source(s)	center wavelength	D1	
+	Fluorescence light source(s)	Lasers/diodes per channel	A1	
+	Fluorescence light source(s)	Coupling (e.g. fiber, light guide, direct)	A2	
+Instrument	Filter Sets	Manufacturer(s)	A1	
+	Filter Sets	Ch 1:	D2	
+	Filter Sets	Ch 2:	D2	
+	Filter Sets	Ch n:	D2	
+Instrument	Detector(s)	Manufacturer	D2	
+	Detector(s)	Camera/Confocal/etc..	D1	
+Instrument	Modality	WF, confocal, TIRF etc…	D1	
+Instrument	integration time	the length of time the image is exposed to light for a single frame	D2	
+Instrument	camera model	Specific model, chip, etc.	A1	camera based
+Instrument	camera serial #	Camera serial number	A1	camera based
+Instrument	flatfield map	an image describing field dependent differences in response	A1	
+				
+Calibration	dark value	the value reported for no incoming light	A1	With Test Tube, other A2/Dev
+Calibration	photometric conversion	conversion factor to convert incoming counts to photons	A1	With Test Tube, other A2/Dev
+Calibration	read noise	the amplitude of read noise	A1	With Test Tube, other A2/Dev
+Calibration	illumination intensity	Light intensity/power at the sample	A1	With Test Tube, other A2/Dev
+Calibration	camera dark map	an image describing the pixel by pixel variations in dark level	A1	With Test Tube, other A2/Dev
+Calibration	camera read map	an image describing the pixel by pixel variations in read noise	A1	With Test Tube, other A2/Dev
+Calibration	3D multi-color bead stack		A1	D2 strongly recommended
+Calibration	PSFJ report		A1	D2 strongly recommended
+Calibration	Test Tube	Other Test Tube parameters	A1	
+Calibration	Imaging standard	e.g. Argolight, Geller MRS4, DNA origami	Dev	
+				
+Sample	preparer	The person who prepared the sample	D1	
+Sample	preparation date		D1	
+Sample	cell line / tissue type		D1	
+Sample	labelling	What is labelled in each color channel	D1	
+Sample	protocol	a link to the protocol used for sample preparation	D1	
+Sample	fixation	the fixation method used	D1	
+Sample	embedding	The embedding medium 	D1	
+Sample	embedding	Refractive index of embedding medium (nominal)	D2	
+Sample	embedding	Refractive index of embedding medium (measured)	A2	
+				
+Processing	source image	ideally the unique ID of the source image, optionally a URL		
+Processing	protocol	what was done		
+				
