@@ -20,7 +20,7 @@ Note that GitHub has a 1GB cap on repositories, and we therefore cannot upload a
 However, all raw data are available from (1) us, or (2) via a Dropbox at University of Massachusetts, or, (3) soon, from the 
 4DN Nucleome Data coordinating center portal at https://data.4dnucleome.org.  
 
-# Basic usage and raw data file format (.dat) information
+## Basic usage and raw data file format (.dat) information
 
 All raw intensity/pixel information is stored in a simple binary format ending in the extension ‘.dat’. 
 Binary files are needed for the computer to be able to keep up with the data streaming from the camera. 
@@ -37,7 +37,7 @@ have WRT displaying depending 16bit resolution greyscale images.
 In general, advanced users will simply read in the .dat binary files into their favorite image processing 
 environment, such as Matlab or Mathematica.
 
-# Frame-by-frame metadata files (.dth)
+## Frame-by-frame metadata files (.dth)
 
 Every exposure of the camera is linked to a metadata string that contains information about the instrument,
 the lasers, the time, etc in the instant that exposure was taken. This metadata string will be about 350 characters 
@@ -70,7 +70,7 @@ DT_AOTF_singleval: True
 scope_z: 4207.35 
 scope_bflamp: 0.0 
 
-# Quantitative analysis of the raw image data in Matlab. 
+##Quantitative analysis of the raw image data in Matlab. 
 
 Right out the box, Matlab can read all .dat files directly. 
 ```
@@ -81,7 +81,7 @@ At this point you have an array with all the data, and you can manipulate this i
 Most people use ‘reshape’ to turn this into a simpler 3D array, e.g. [X Y T]. 
 You can use ‘imshow’ on this array (or slices thereof) directly, to see/scale/process the images.
 
-# Quantitative analysis of the raw image data in Mathematica. 
+## Quantitative analysis of the raw image data in Mathematica. 
 
 Right out the box, Mathematica can read all .dat files directly. 
 ```
@@ -94,12 +94,12 @@ or whatever order they like most. You can manipulate the data as data, or you ca
 designate the data as raster images via Image[] if you prefer do your processing 
 in the image space. Staying in ‘data’ space is typically easier. 
 
-# Quantitative analysis of the tracks.
+## Quantitative analysis of the tracks.
 
 For convenience, we also provide the XY,T tracks if you do not want to do the tracking yourself. 
 The .mat files can be opened in your favorite analysis environment (Matlab, Mathematica, Python, ...).
 
-# Biological, code, and instrument details
+## Biological, code, and instrument details
 
 *U2-OS* Tet-On® Cell Line (#631143) were purchased from Clontech. All mammalian cells were cultured on tissue culture plastic in standard tissue culture incubators held at 37°C with 5.0% CO2 using DMEM supplemented with 20% fetal bovine serum and penicillin-streptomycin antibiotics. 
 U2OS cells co-expressing H2B-ArrayGN and mWTGFP were synchronized to G1/S boundary using a double thymidine block procedure. 
