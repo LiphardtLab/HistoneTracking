@@ -12,9 +12,13 @@ This means that for every cell, we obtain between 40 to 180 XY,T trajectories. T
 chromatin is moving. A basic analysis of these data is presented in Figure 3 of 
 https://www.biorxiv.org/content/early/2017/07/03/159004.   
  
-We have uploaded (1) all raw data, (2) files containing XY,T tracks of single histones, 
+We have uploaded (1) some raw data, (2) files containing XY,T tracks of single histones, 
 and (3) a detailed description of the experiment and our microscope. 
 Please let us know if there is anything else you would like us to upload and share.
+
+Note that GitHub has a 1GB cap on repositories, and we therefore cannot upload all our raw data here. 
+However, all raw data are available from (1) us, or (2) via a Dropbox at University of Massachusetts, or, (3) soon, from the 
+4DN Nucleome Data coordinating center portal at https://data.4dnucleome.org.  
 
 # Basic usage and raw data file format (.dat) information
 
