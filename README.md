@@ -70,7 +70,7 @@ DT_AOTF_singleval: True
 scope_z: 4207.35 
 scope_bflamp: 0.0 
 
-##Quantitative analysis of the raw image data in Matlab. 
+## Quantitative analysis of the raw image data in Matlab. 
 
 Right out the box, Matlab can read all .dat files directly. 
 ```
@@ -137,7 +137,7 @@ fitted Gaussian.
 *Fractional Brownian Motion*. The raw XY,T data were directly fit to a three parameter fBM model 
 ```
 Mathematica version 11.1.1.0, 
-FractionalBrownianMotionProcess[μ, σ, h], ProcessEstimator -> "MaximumLikelihood"]
+FractionalBrownianMotionProcess[μ, σ, h], ProcessEstimator -> "MaximumLikelihood"
 ``` 
 The first term μ captures constant ‘drift’, σ captures the covariance (= σ2 (s2h+t2h-Abs[t-s]2h)/2), and h is the Hurst parameter. 
 Note that h is simply 1/2 of α, the slope of LogLog transformed MSD.
