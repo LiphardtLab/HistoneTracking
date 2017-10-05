@@ -16,9 +16,9 @@ We have uploaded (1) all raw data, (2) files containing XY,T tracks of single hi
 and (3) a detailed description of the experiment and our microscope. 
 Please let us know if there is anything else you would like us to upload and share.
 
-# Basic usage and file structure information
+# Basic usage and raw data file format (.dat) information
 
-1/ All raw intensity/pixel information is stored in a simple binary format ending in the extension ‘.dat’. 
+All raw intensity/pixel information is stored in a simple binary format ending in the extension ‘.dat’. 
 Binary files are needed for the computer to be able to keep up with the data streaming from the camera. 
 These binary file can be read in hundreds of different ways, depending on your needs.
 
@@ -30,12 +30,45 @@ At this point you will have the full dataset, as an image stack, in ImageJ (or F
 Note that the image may be completely white or black, due to limitations your operating system may 
 have WRT displaying depending 16bit resolution greyscale images.
 
-In general, advanced users will simply read in the binary files into their favorite image processing 
+In general, advanced users will simply read in the .dat binary files into their favorite image processing 
 environment, such as Matlab or Mathematica.
+
+# Frame-by-frame metadata files (.dth)
+
+Every exposure of the camera is linked to a metadata string that contains information about the instrument,
+the lasers, the time, etc in the instant that exposure was taken. This metadata string will be about 350 characters 
+long and will be terminated by '\n'. This string is structured as follows, with all fields being 
+self-explanatory. N is the index of images, H and W are the height and width of the images, and 
+then there is a timestamp and exposure and laser information:
+
+N:0 
+H:512 
+W:512 
+Time:1489775259.3620 
+Exp: 50.0 
+Gain: 250 
+DT_Analog_v1: 5.0 
+DT_Analog_v1: 5.0 
+DT_Analog_v1: 5.0 
+DT_Analog_v1: 5.0 
+639: True 
+405: True 
+488: True 
+561: True 
+z_nano_z: 98.5427 
+motor_stage_x: 13.9445 
+686_y: 13.1545 
+DT_AOTF_v1: 5.0 
+DT_AOTF_v1: 5.0 
+DT_AOTF_v1: 5.0 
+DT_AOTF_v1: 5.0 
+DT_AOTF_singleval: True 
+scope_z: 4207.35 
+scope_bflamp: 0.0 
 
 # Quantitative analysis of the raw image data in Matlab. 
 
-Right out the box, Matlab can read all octopus files directly. 
+Right out the box, Matlab can read all .dat files directly. 
 
 fileID = fopen('a1.dat');
 myImageArray = fread(fileID,'uint16');
@@ -46,7 +79,7 @@ You can use ‘imshow’ on this array (or slices thereof) directly, to see/scal
 
 # Quantitative analysis of the raw image data in Mathematica. 
 
-Right out the box, Mathematica can read all octopus files directly. 
+Right out the box, Mathematica can read all .dat files directly. 
 
 file = "/Users/janliphardt/Desktop/a_1.dat";
 bc = Import[file,”UnsignedInteger16”];
