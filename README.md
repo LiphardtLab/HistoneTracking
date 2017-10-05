@@ -16,27 +16,53 @@ We have uploaded (1) all raw data, (2) files containing XY,T tracks of single hi
 and (3) a detailed description of the experiment and our microscope. 
 Please let us know if there is anything else you would like us to upload and share.
 
-# Basic usage and file structure information:
+# Basic usage and file structure information
 
 1/ All raw intensity/pixel information is stored in a simple binary format ending in the extension ‘.dat’. 
 Binary files are needed for the computer to be able to keep up with the data streaming from the camera. 
 These binary file can be read in hundreds of different ways, depending on your needs.
 
 The easiest thing to do is to use ImageJ (or Fiji), which can read raw binary files via File > Import > Raw... 
-Then select the .dat file, and select Unsigned 16 bit integer, Little-endian byte order, and the Height and Width information, 
-which depends on how you set your camera. A typical value will be 512 x 512. 
-Note that essentially all programs disagree about what is meant by the height and width 
-of an image, so you may need to flip the values if your images look funny. 
-This is true for all programs (Fiji, Matlab, Mathematica, ...). 
-You will also need to set the number of images to whatever value is stated the corresponding metadata (.dth) file, 
-which defaults to storing 100 images per file. At this point you will have the full dataset, as an image stack, 
-in ImageJ (or Fiji). Note that the image may be completely white or black, depending on your experiment 
-and how you set the gain etc. Then, go to Select Image > Adjust > Brightness/Contrast... to see the data. 
-Note that you cannot permanently apply any Brightness/Contrast values to the image stack, 
-since it is in 16 bit format, and ImageJ/Fiji only allows you to do that with 8 bit images.
+Then select the .dat file, and select Unsigned 16 bit integer, Little-endian byte order, and the 
+Height and Width information (512 x 512). You will also need to set the number of images to whatever 
+value is stated the corresponding metadata (.dth) file, which defaults to storing 100 images per file. 
+At this point you will have the full dataset, as an image stack, in ImageJ (or Fiji). 
+Note that the image may be completely white or black, due to limitations your operating system may 
+have WRT displaying depending 16bit resolution greyscale images.
 
 In general, advanced users will simply read in the binary files into their favorite image processing 
-environment, such as Matlab or Mathematica. Briefly, 
+environment, such as Matlab or Mathematica.
+
+# Quantitative analysis of the raw image data in Matlab. 
+
+Right out the box, Matlab can read all octopus files directly. 
+
+fileID = fopen('a1.dat');
+myImageArray = fread(fileID,'uint16');
+
+At this point you have an array with all the data, and you can manipulate this in any way you want. 
+Most people use ‘reshape’ to turn this into a simpler 3D array, e.g. [X Y T]. 
+You can use ‘imshow’ on this array (or slices thereof) directly, to see/scale/process the images.
+
+# Quantitative analysis of the raw image data in Mathematica. 
+
+Right out the box, Mathematica can read all octopus files directly. 
+
+file = "/Users/janliphardt/Desktop/a_1.dat";
+bc = Import[file,”UnsignedInteger16”];
+
+At this point you have all the data, and you can manipulate the data in any way you want. 
+Most people use ‘ArrayReshape[]’ to turn everything into a simple 3D array, e.g. [X Y T] 
+or whatever order they like most. You can manipulate the data as data, or you can can explicitly 
+designate the data as raster images via Image[] if you prefer do your processing 
+in the image space. Staying in ‘data’ space is typically easier. 
+
+# Quantitative analysis of the tracks.
+
+For convenience, we also provide the XY,T tracks if you do not want to do the tracking yourself. 
+The .mat files can be opened in your favorite analysis environment (Matlab, Mathematica, Python, ...).
+
+ 
 
 
 
