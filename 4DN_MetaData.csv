@@ -1,1 +1,55 @@
-Category,Metadata key,Description,Value,Tier,CommentsImage,pixel size,the dimensions of pixels in the image,101 nanometers,D1,COMImage,z-sampling,Distance between optical planes,1 plane only,D1,COMImage,time step,the time step between images / volumes in a series,UKN,D1,COMImage,time stamp,The time at which the image was taken,See linked .dat files,D1,COMImage,unique ID,"A unique ID which identifies this image, even if file names change",See linked .dat file,D1,COMImage,imager,The person who acquired the image,Matt Franklin,D1,COMImage,Channel encoding,"Order in file, e.g. t,z,ch1-n",NA - single channel,D1,COMInstrument,Brand,"Manufacturer, development",Custom Homebuilt Hardware,D1,COMInstrument,Objective,Brand,Olympus,D1,COMInstrument,Objective,N.A.,1.49,D1,COMInstrument,Objective,Magnification,100x,D1,COMInstrument,Objective,Immersion Medium,Olympus Normal Oil,D2,COMInstrument,Objective,Refractive Index (measured),UKN,A2,COMInstrument,Objective,Working distance,0.1 microns,A1,COMInstrument,Objective,Field Number,22,A1,COMInstrument,Objective,"special designation (e.g. TIRF, …)",100X0TIRF,D1,COMInstrument,Fluorescence light source(s),Manufacturer,Coherent,D1,COMInstrument,Fluorescence light source(s),Type,UKN,D1,COMInstrument,Fluorescence light source(s),Power output nominal,UKN,A1,COMInstrument,Fluorescence light source(s),Center wavelength,488 nm,D1,COMInstrument,Fluorescence light source(s),Lasers/diodes per channel,UKN,A1,COMInstrument,Fluorescence light source(s),"Coupling (e.g. fiber, light guide, direct)",Olympus CellTIRF four color laser combiner unit,A2,COMInstrument,Filter Sets,Manufacturer(s),UKN,A1,COMInstrument,Filter Sets,Ch 1:,UKN,D2,COMInstrument,Filter Sets,Ch 2:,UKN,D2,COMInstrument,Filter Sets,Ch n:,UKN,D2,COMInstrument,Detector(s),Manufacturer,Andor EMCCD iXon Plus,D2,COMInstrument,Detector(s),Camera/Confocal/etc..,UKN,D1,COMInstrument,Modality,"WF, confocal, TIRF etc…",TIRF,D1,COMInstrument,integration time,the length of time the image is exposed to light for a single frame,50 milliseconds,D2,COMInstrument,camera model,"Specific model, chip, etc.",UKN,A1,camera basedInstrument,camera serial #,Camera serial number,UKN,A1,camera basedInstrument,flatfield map,an image describing field dependent differences in response,UKN,A1,COMCalibration,dark value,the value reported for no incoming light,UKN,A1,"With Test Tube, other A2/Dev"Calibration,photometric conversion,conversion factor to convert incoming counts to photons,UKN,A1,"With Test Tube, other A2/Dev"Calibration,read noise,the amplitude of read noise,UKN,A1,"With Test Tube, other A2/Dev"Calibration,illumination intensity,Light intensity/power at the sample,UKN,A1,"With Test Tube, other A2/Dev"Calibration,camera dark map,an image describing the pixel by pixel variations in dark level,UKN,A1,"With Test Tube, other A2/Dev"Calibration,camera read map,an image describing the pixel by pixel variations in read noise,UKN,A1,"With Test Tube, other A2/Dev"Calibration,3D multi-color bead stack,,UKN,A1,D2 strongly recommendedCalibration,PSFJ report,,UKN,A1,D2 strongly recommendedCalibration,Test Tube,Other Test Tube parameters,UKN,A1,COMCalibration,Imaging standard,"e.g. Argolight, Geller MRS4, DNA origami",UKN,Dev,COMSample,preparer,The person who prepared the sample,Matt Franklin,D1,COMSample,preparation date,,UKN,D1,COMSample,cell line / tissue type,,U2OS U2-OS Tet-On® Cell Line (#631143) from Clontech,D1,COMSample,labelling,What is labelled in each color channel,Histone 2B labeled with nanobody array Tag (ArrayGN),D1,COMSample,protocol,a link to the protocol used for sample preparation,UKN,D1,COMSample,fixation,the fixation method used,None - live cell imaging,D1,COMSample,embedding,The embedding medium,None,D1,COMSample,embedding,Refractive index of embedding medium (nominal),None,D2,COMSample,embedding,Refractive index of embedding medium (measured),None,A2,COMProcessing,source image,"ideally the unique ID of the source image, optionally a URL",To be figured out - awaiting guidance,Dev,COMProcessing,protocol,what was done,UKN,See README.md at https://github.com/LiphardtLab/HistoneTracking,COM
+Category,Metadata key,Description,Value,Tier,Comments
+Image,pixel size,the dimensions of pixels in the image,101 nanometers,D1,COM
+Image,z-sampling,Distance between optical planes,1 plane only,D1,COM
+Image,time step,the time step between images / volumes in a series,2000 milliseconds - 0.5 Hz imaging rate,D1,COM
+Image,time stamp,The time at which the image was taken,See linked .dat files,D1,COM
+Image,unique ID,"A unique ID which identifies this image, even if file names change",See linked .dat files - could use SHA-256 to generate unique ID,D1,COM
+Image,imager,The person who acquired the image,Matt Franklin,D1,COM
+Image,Channel encoding,"Order in file, e.g. t,z,ch1-n",NA - single channel,D1,COM
+Instrument,Brand,"Manufacturer, development",Custom Homebuilt Hardware,D1,COM
+Instrument,Objective,Brand,Olympus,D1,COM
+Instrument,Objective,N.A.,1.49,D1,COM
+Instrument,Objective,Magnification,100x,D1,COM
+Instrument,Objective,Immersion Medium,Olympus Normal Oil FF,D2,COM
+Instrument,Objective,Refractive Index (measured),1.52,A2,COM
+Instrument,Objective,Working distance,0.1 microns,A1,COM
+Instrument,Objective,Field Number,22,A1,COM
+Instrument,Objective,"special designation (e.g. TIRF)",100X0TIRF,D1,COM
+Instrument,Fluorescence light source(s),Manufacturer,Coherent,D1,COM
+Instrument,Fluorescence light source(s),Type,Diode laser with optoisolator for mode-hop supression,D1,COM
+Instrument,Fluorescence light source(s),Power output nominal,UKN,A1,COM
+Instrument,Fluorescence light source(s),Center wavelength,488 nm,D1,COM
+Instrument,Fluorescence light source(s),Lasers/diodes per channel,UKN,A1,COM
+Instrument,Fluorescence light source(s),"Coupling (e.g. fiber, light guide, direct)",Olympus CellTIRF four color laser combiner unit,A2,COM
+Instrument,Filter Sets,Manufacturer(s),Semrock,A1,COM
+Instrument,Filter Sets,Ch 1:,UKN,D2,COM
+Instrument,Filter Sets,Ch 2:,UKN,D2,COM
+Instrument,Filter Sets,Ch n:,UKN,D2,COM
+Instrument,Detector(s),Manufacturer,Andor EMCCD iXon Plus,D2,COM
+Instrument,Detector(s),Camera/Confocal/etc..,Camera,D1,COM
+Instrument,Modality,"WF, confocal, TIRF etc",TIRF,D1,COM
+Instrument,integration time,the length of time the image is exposed to light for a single frame,50 milliseconds,D2,COM
+Instrument,camera model,"Specific model, chip, etc.",iXON Plus,A1,camera based
+Instrument,camera serial #,Camera serial number,UKN,A1,camera based
+Instrument,flatfield map,an image describing field dependent differences in response,UKN,A1,COM
+Calibration,dark value,the value reported for no incoming light,See first few frames of every experiment - they are aquired with laser = OFF to give accurate estimate of dark value,A1,"With Test Tube, other A2/Dev"
+Calibration,photometric conversion,conversion factor to convert incoming counts to photons,UKN,A1,"With Test Tube, other A2/Dev"
+Calibration,read noise,the amplitude of read noise,UKN,A1,"With Test Tube, other A2/Dev"
+Calibration,illumination intensity,Light intensity/power at the sample,UKN,A1,"With Test Tube, other A2/Dev"
+Calibration,camera dark map,an image describing the pixel by pixel variations in dark level,UKN,A1,"With Test Tube, other A2/Dev"
+Calibration,camera read map,an image describing the pixel by pixel variations in read noise,UKN,A1,"With Test Tube, other A2/Dev"
+Calibration,3D multi-color bead stack,,UKN,A1,D2 strongly recommended
+Calibration,PSFJ report,,UKN,A1,D2 strongly recommended
+Calibration,Test Tube,Other Test Tube parameters,UKN,A1,COM
+Calibration,Imaging standard,"e.g. Argolight, Geller MRS4, DNA origami",UKN,Dev,COM
+Sample,Preparer,The person who prepared the sample,Matt Franklin,D1,COM
+Sample,Preparation date,??,May_17_2017,D1,COM
+Sample,Cell line / tissue type,??,U2OS U2-OS Tet-On Clontech Cell Line (#631143),D1,COM
+Sample,labelling,What is labelled in each color channel,Histone 2B labeled with nanobody array Tag (ArrayGN),D1,COM
+Sample,protocol,a link to the protocol used for sample preparation,UKN,D1,COM
+Sample,fixation,the fixation method used,None - live cell imaging,D1,COM
+Sample,embedding,The embedding medium,None,D1,COM
+Sample,embedding,Refractive index of embedding medium (nominal),None,D2,COM
+Sample,embedding,Refractive index of embedding medium (measured),None,A2,COM
+Processing,source image,"ideally the unique ID of the source image, optionally a URL",To be figured out - awaiting guidance,Dev,COM
+Processing,protocol,what was done,UKN,See README.md at https://github.com/LiphardtLab/HistoneTracking,COM
